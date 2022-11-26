@@ -9,9 +9,9 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get upgrade -y
 
 # install packages
-COPY ./server/requirements.txt requirements.txt
+COPY ./requirements.txt requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # set source
-COPY ./server/src /src
+COPY ./src /src
 WORKDIR /src

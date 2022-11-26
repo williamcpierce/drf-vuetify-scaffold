@@ -1,4 +1,4 @@
-"""test_project URL Configuration
+"""base_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("", include("vue_app.urls"), name="vue_app"),
     path("api/", include("api_app.urls"), name="api_app"),
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),

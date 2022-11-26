@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkautomation_apps"]=self["webpackChunkautomation_apps"]||[]).push([[177],{9743:function(n,u,e){e.r(u),e.d(u,{default:function(){return p}});var t=function(){var n=this,u=n._self._c;return u("p",[n._v("Hello world")])},l=[],a={name:"HomeView"},o=a,r=e(1001),s=(0,r.Z)(o,t,l,!1,null,null,null),p=s.exports}}]);
+//# sourceMappingURL=home.812ac450.js.map

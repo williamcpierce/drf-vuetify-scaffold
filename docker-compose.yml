@@ -4,6 +4,8 @@ services:
     client:
         build: ./client
         command: sh -c "npm run serve"
+        volumes:
+            - ./client/src:/src
         ports:
             - 8080:8080
 

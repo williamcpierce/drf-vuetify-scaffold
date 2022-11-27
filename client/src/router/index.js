@@ -6,13 +6,7 @@ Vue.use(VueRouter);
 export default new VueRouter({
     routes: [
         {
-            path: "/home",
-            name: "home",
-            component: () =>
-                import(/* webpackChunkName: "home" */ "@/views/HomeView.vue"),
-        },
-        {
-            path: "/message",
+            path: "/",
             name: "message",
             component: () =>
                 import(

@@ -15,7 +15,9 @@
         </v-app-bar>
         <v-main>
             <v-container>
-                <router-view :key="$route.path" />
+                <v-card>
+                    <router-view :key="$route.path" />
+                </v-card>
             </v-container>
         </v-main>
     </v-app>
@@ -27,12 +29,8 @@ export default {
     data: () => ({
         links: [
             {
-                text: "Home",
-                name: "home",
-            },
-            {
-                text: "Message",
-                name: "message",
+                text: "Messages",
+                name: "/",
             },
         ],
     }),

@@ -1,5 +1,7 @@
 <template>
-    <p>{{ message }}</p>
+    <div>
+        <v-data-table :items="messages" :headers="headers"> </v-data-table>
+    </div>
 </template>
 
 <script>
@@ -9,14 +11,18 @@ export default {
     name: "MessageView",
     data() {
         return {
-            message: "",
+            messages: [],
+            headers: [
+                { text: "ID", value: "id" },
+                { text: "Message", value: "text" },
+            ],
         };
     },
     mounted() {
         messageApi
             .getMessage()
             .then((response) => {
-                this.message = response;
+                this.messages = response;
             })
             .catch((error) => {
                 console.log(error);

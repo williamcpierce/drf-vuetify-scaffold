@@ -8,4 +8,9 @@ export default {
             return response.data;
         });
     },
+    postMessage(data) {
+        return axios.post("/api/message/", data).then((response) => {
+            return response.data;
+        });
+    },
 };

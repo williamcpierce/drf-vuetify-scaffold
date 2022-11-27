@@ -1,16 +1,16 @@
 <template>
     <v-card rounded="lg" class="elevation-5">
         <v-card-title>
-            Messages
+            Posts
             <v-dialog v-model="dialog" max-width="700px">
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn class="ml-3" icon v-bind="attrs" v-on="on">
-                        <v-icon>mdi-playlist-plus</v-icon>
+                        <v-icon>mdi-plus</v-icon>
                     </v-btn>
                 </template>
                 <v-card rounded="lg">
                     <v-card-title>
-                        <span class="text-h5">Post</span>
+                        <span class="text-h5">New Post</span>
                     </v-card-title>
                     <v-card-text>
                         <v-textarea
@@ -24,8 +24,9 @@
                         <v-btn text @click="close"> Cancel </v-btn>
                         <v-btn color="blue" text @click="save"> Post </v-btn>
                         <v-spacer />
-                    </v-card-actions> </v-card
-            ></v-dialog>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
             <v-spacer></v-spacer>
             <v-responsive max-width="260">
                 <v-text-field
@@ -35,10 +36,14 @@
                     dense
                     rounded
                     filled
-                ></v-text-field> </v-responsive
-        ></v-card-title>
-        <v-data-table :items="messages" :headers="headers" :search="search">
-        </v-data-table>
+                ></v-text-field>
+            </v-responsive>
+        </v-card-title>
+        <v-data-table
+            :items="messages"
+            :headers="headers"
+            :search="search"
+        ></v-data-table>
     </v-card>
 </template>
 
@@ -53,10 +58,7 @@ export default {
             dialog: false,
             search: "",
             message: "",
-            headers: [
-                { text: "ID", value: "id" },
-                { text: "Message", value: "text" },
-            ],
+            headers: [{ text: "Message", value: "text" }],
         };
     },
     mounted() {

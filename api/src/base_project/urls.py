@@ -1,7 +1,7 @@
 """base_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("api/", include("api_app.urls"), name="api_app"),
     path("admin/", admin.site.urls),
+    path("api/", include("api_app.urls"), name="api_app"),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]

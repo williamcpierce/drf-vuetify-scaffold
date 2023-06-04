@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.11-slim-buster
+FROM python:latest
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1

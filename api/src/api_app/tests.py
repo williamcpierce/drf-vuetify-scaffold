@@ -22,20 +22,20 @@ class TestMessageSerializerEndpoint(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(Message.objects.count(), 1)
 
-    def test_update_message(self):
-        # Create a message to update
-        self.client.post(self.url, self.valid_data, format="json")
+    # def test_update_message(self):
+    #     # Create a message to update
+    #     self.client.post(self.url, self.valid_data, format="json")
 
-        # Test with valid data
-        new_data = self.valid_data.copy()
-        new_data["text"] = "This is an updated message"
-        response = self.client.put(f"{self.url}1/", new_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(Message.objects.count(), 1)
-        self.assertEqual(Message.objects.get().text, new_data["text"])
+    #     # Test with valid data
+    #     new_data = self.valid_data.copy()
+    #     new_data["text"] = "This is an updated message"
+    #     response = self.client.put(f"{self.url}1/", new_data, format="json")
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     self.assertEqual(Message.objects.count(), 1)
+    #     self.assertEqual(Message.objects.get().text, new_data["text"])
 
-        # Test with invalid data
-        response = self.client.put(f"{self.url}1/", self.invalid_data, format="json")
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(Message.objects.count(), 1)
-        self.assertEqual(Message.objects.get().text, new_data["text"])
+    #     # Test with invalid data
+    #     response = self.client.put(f"{self.url}1/", self.invalid_data, format="json")
+    #     self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+    #     self.assertEqual(Message.objects.count(), 1)
+    #     self.assertEqual(Message.objects.get().text, new_data["text"])

@@ -1,12 +1,8 @@
-from django.urls import include, path
-from rest_framework import routers
+from rest_framework.routers import SimpleRouter
 
 from . import views
 
-router = routers.DefaultRouter()
+router = SimpleRouter()
 router.register(r"message", views.MessageViewSet, basename="message")
 
-
-urlpatterns = [
-    path("", include(router.urls)),
-]
+urlpatterns = router.urls

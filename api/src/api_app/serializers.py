@@ -1,10 +1,10 @@
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import ModelSerializer
 
 from . import models
 
 
-class MessageSerializer(HyperlinkedModelSerializer):
+class MessageSerializer(ModelSerializer):
     class Meta:
         model = models.Message
-        fields = [field.name for field in model._meta.fields]
-        fields.extend(["id"])
+        fields = "__all__"
+        read_only_fields = ["id"]

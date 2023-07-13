@@ -1,8 +1,11 @@
 __pycache__
-node_modules
 ssl
 
 *.env
 *.pyc
 
 .DS_store
+
+node_modules
+package-lock.json
+venv
